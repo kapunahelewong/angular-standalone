@@ -14,6 +14,8 @@ import {BuilderModule} from '@builder.io/angular'; // Import the Builder.io Angu
       <builder-component
         model="page"
         entry="/test"
+        (load)="noBuilderPageForUrl = $event ? false : true"
+        (error)="noBuilderPageForUrl = true"
       >
       </builder-component>
       <a [routerLink]="['/']">
@@ -30,4 +32,5 @@ import {BuilderModule} from '@builder.io/angular'; // Import the Builder.io Angu
 })
 export class AppComponent {
   title = 'homes';
+  noBuilderPageForUrl: boolean = false;
 }

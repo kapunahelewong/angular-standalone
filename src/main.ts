@@ -16,7 +16,6 @@ bootstrapApplication(AppComponent, {
   providers: [
     provideProtractorTestingSupport(), 
     provideRouter(routeConfig),
-    // {provide: BuilderModule, useValue: API_KEY}],
     ...builderModuleProviders
   ],
 }).catch((err) => console.error(err));
